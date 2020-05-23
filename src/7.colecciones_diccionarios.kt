@@ -13,5 +13,10 @@ fun main() {
             )
     )
 
-    //3.
+    //3.Como acceder a los elementos que hay dentro de un mapa
+    println(mapPersona["nombre"])
+    println(dias["mes"])
+    println(dias[18])
+//    println(mapPais["capital"]["nombre"])
+
 }

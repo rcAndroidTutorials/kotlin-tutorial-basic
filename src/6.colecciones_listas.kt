@@ -1,5 +1,5 @@
 //Las estructuras de datos son una parte muy importante de cualquier lengujae de programación
-//Y otra vez es importante los conceptos mutable e inmutable.
+//Y otra vez es importante los conceptos mutable(var) e inmutable(val).
 fun main() {
     //1. Crear variables del tipo MutableList y List
     println("======== Ejercicio 1 ===========")
@@ -22,18 +22,19 @@ fun main() {
     println("======== Ejercicio 3 ===========")
     println(numerosMutable.first())
     println(numerosMutable.last())
+    println(numeros.first())
 
 
-    //4. Crear la lista llamada numerosPares con los numeros pares de la variable numeros
+    //4. Crear la lista llamada numerosPares con los números pares de la variable numeros
     println("======== Ejercicio 4 ===========")
-    val nuevaListaPares: MutableList<Int> = mutableListOf()
-    for(n in numeros) {
-        if (n%2 == 0) {
-            nuevaListaPares.add(n)
-        }
-    }
-    println("Nueva lista de pares: $nuevaListaPares")
-    //Solución kotlin
+//    val nuevaListaPares: MutableList<Int> = mutableListOf()
+//    for(n in numeros) {
+//        if (n%2 == 0) {
+//            nuevaListaPares.add(n)
+//        }
+//    }
+//    println("Nueva lista de pares: $nuevaListaPares")
+//    Solución kotlin
     val numerosPares: List<Int> = numeros.filter { it % 2 == 0 }
     println("Nueva lista de pares: $numerosPares")
 
