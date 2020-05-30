@@ -1,28 +1,49 @@
 //Herencia: propiedad por la cual una clase hereda propiedades de la super clase o clase Padre
-abstract class Figura(val x: Int, val y: Int) {
-    abstract fun calcularArea(): Double
+
+/*
+                    Figura(Supeclase o clase padre)
+
+                /       |       \
+               /        |        \
+              /         |         \
+        Cuadrado    Triangulo   Circulo     ETC...
+
+ */
+open class Figura(var x: Int, var y: Int) {
+    fun imprimirCoordenadas() {
+        println("Las coordenadas son: ($x,$y)")
+    }
+    fun horizontalmente(mover: Int) {
+        this.x = this.x + mover
+    }
+    fun verticalmente(mover: Int) {
+        this.y = this.y + mover
+    }
 }
-class Cuadrado(val lado: Int, x: Int, y: Int): Figura(x,y) {
-    override fun calcularArea() = (lado*lado).toDouble()
-}
-class Triangulo(val base: Int, val altura: Int, x: Int, y: Int): Figura(x,y) {
-    override fun calcularArea() = (base*altura/2).toDouble()
+class Cuadrado(val lado: Int, x: Int, y: Int): Figura(x,y)
+class Triangulo(val base: Int, val altura: Int): Figura(0, 0)
+class Circulo(val radio: Int, x: Int, y: Int): Figura(x,y) {
+    fun rodarHorizontalmente(vueltas: Int) {
+        this.x = this.x + vueltas * this.radio
+    }
 }
 
 fun main() {
-    val c = Cuadrado(4, 5, 10)
-    val t = Triangulo(10, 5, 0, 0)
-    val t2 = Triangulo(20, 50, 10, 10)
-    println(c.x)
-    println(t.base)
-    println(t.y)
+    println("Resultados de Cuadrado")
+    val c = Cuadrado(10, 20,20)
+    c.imprimirCoordenadas()
+    c.horizontalmente(10)
+    c.imprimirCoordenadas()
 
-    val listaFiguras: List<Figura> = listOf(c,t,t2)
-    mostrarAreas(listaFiguras)
-}
+    println("Resultados de Triangulo")
+    val t = Triangulo(10, 20)
+    t.imprimirCoordenadas()
+    t.verticalmente(15)
+    t.imprimirCoordenadas()
 
-fun mostrarAreas(figuras: List<Figura>) {
-    for (figura in figuras) {
-        println(figura.calcularArea())
-    }
+    println("Resultados de Circulo")
+    val cir = Circulo(1, 0, 10)
+    cir.imprimirCoordenadas()
+    cir.rodarHorizontalmente(5)
+    cir.imprimirCoordenadas()
 }
