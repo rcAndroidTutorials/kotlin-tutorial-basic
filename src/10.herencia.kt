@@ -20,6 +20,7 @@ open class Figura(var x: Int, var y: Int) {
         this.y = this.y + mover
     }
 }
+class Rombo(val lado: Int, x: Int, y: Int): Figura(10,10)
 class Cuadrado(val lado: Int, x: Int, y: Int): Figura(x,y)
 class Triangulo(val base: Int, val altura: Int): Figura(0, 0)
 class Circulo(val radio: Int, x: Int, y: Int): Figura(x,y) {
@@ -46,4 +47,8 @@ fun main() {
     cir.imprimirCoordenadas()
     cir.rodarHorizontalmente(5)
     cir.imprimirCoordenadas()
+
+    val r = Rombo(10, 0, 0)
+    r.imprimirCoordenadas()
+    r.horizontalmente(11)
 }

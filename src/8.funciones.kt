@@ -6,6 +6,7 @@ fun main() {
     imprimirSaludo()
     imprimirSaludo("Hola Matias")
     val resultado = suma(10,20)
+    val resultado2 = suma(14,30)
     println(resultado)
     println(alCuadrado(5))
     println(alCuadrado(5.5))
